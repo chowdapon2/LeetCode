@@ -12,7 +12,7 @@ mid <= x/mid
  如果是left = mid跟戳= mid  最後會無窮迴圈, 會死人的呢
 */
 
-
+===41ms===
 class Solution {
     public int mySqrt(int x) {
         if (x <= 1) return x;
@@ -27,4 +27,27 @@ class Solution {
             }
         return left-1;
         }
+}
+
+
+
+====2ms=========
+class Solution {
+    public int mySqrt(int x) {
+         if (x == 0)
+        return 0;
+        int left = 1, right = Integer.MAX_VALUE;
+        int ans = 0;
+        while (left <= right) {
+            int mid = left + (right - left)/2;
+           
+            if (mid > x/mid) {
+                right = mid - 1;
+            } else {
+                ans = mid;  
+                left = mid + 1;
+            }
+        }
+        return ans ;
+    }
 }
