@@ -6,24 +6,24 @@ The brackets must close in the correct order, "()" and "()[]{}" are all valid bu
 */
 
 class Solution {
+    
     public boolean isValid(String s) {
+        Map<Character, Character> map = new HashMap<Character, Character>() {
+        {
+            put('(', ')');
+            put('{', '}');
+            put('[', ']');
+        }};
+        
         Stack<Character> stack = new Stack<>();
-        for(int i =0; i<s.length() ; i++){//length後面要記得加()
-            if(s.charAt(i) == '(' || s.charAt(i) == '[' || s.charAt(i) == '{'){
-                stack.push(s.charAt(i));
-            }else if(s.charAt(i) ==')' && !stack.empty() && stack.peek() == '('){
-                stack.pop();
-            }else if(s.charAt(i) ==']' && !stack.empty() && stack.peek() == '['){
-                stack.pop();
-            }else if(s.charAt(i) =='}' && !stack.empty() && stack.peek() == '{'){
-                stack.pop();
-            }else{
-                return false;
-            }
+            for (char c : s.toCharArray()) {
+                if (map.containsKey(c)) {
+                    stack.push(c);
+                } else if (stack.isEmpty() || map.get(stack.pop()) != c) {
+                    return false;
+                }
         }
-        return stack.isEmpty();//isEmpty E要大寫
+        return stack.isEmpty();
     }
 }
-
-
 ==========================
