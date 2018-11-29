@@ -64,3 +64,31 @@ class Solution {
         
     }
 }
+
+// 4ms
+class Solution {
+    public boolean isPalindrome(String s) {
+        // 1. sol
+        // use stack + StringBuffer  => super slow
+        
+        // 2. two pointer with isAlphanumeric(), s.charAt(i)
+        int len = s.length();
+        
+        int start = 0;
+        int end = len-1;
+        
+        while(start < end){
+            while(start < end && !isAlphanumeric(s.charAt(start))) start++;
+            while(start < end && !isAlphanumeric(s.charAt(end))) end--;
+            if(Character.toLowerCase(s.charAt(start)) != Character.toLowerCase(s.charAt(end))){
+                return false; 
+            }
+            start++; end--;
+        }
+        return true; 
+    }
+    
+    public static boolean isAlphanumeric(char c) {
+        return (c <= 'Z' && c >= 'A') || (c <= 'z' && c >= 'a') ||(c>='0'&&c<='9');
+    }
+}
