@@ -35,7 +35,54 @@ class Solution {
     }
 }
 
-
+class Solution {
+    public int maxSubArray(int[] A) {
+        // brute force solution
+        // Memory Limit Exceeded
+        
+        // int ans = Integer.MIN_VALUE;
+        // int len = A.length;
+        // int[][] res = new int[len][len];
+        // for(int i = 0; i<len ;i++){
+        //     for(int j=i; j< len ; j++){
+        //         if (i==j){
+        //             res[i][j]=A[i];
+        //             ans = Math.max(res[i][j], ans);
+        //         }else{
+        //             res[i][j]= A[j] + res[i][j-1];
+        //             ans = Math.max(res[i][j], ans);
+        //         }
+        //     }   
+        // }
+        // return ans;
+        
+        // brute force solution 2 withour A[][]
+        // int ans = Integer.MIN_VALUE;
+        // int len = A.length;
+        // int[] temp = new int[len];
+        // for(int i = 0; i<len ;i++){
+        //     for(int j=i; j< len ; j++){
+        //         if (i==j){
+        //             temp[j] = A[j];
+        //             ans = Math.max(temp[j], ans);
+        //         }else{
+        //             temp[j] = temp[j-1]+A[j];
+        //             ans = Math.max(temp[j], ans);
+        //         }
+        //     }
+        // }
+        // return ans;
+        
+        //solution 3 no temp[len]
+        // f(k) = max( f(k-1) + A[k], A[k] )
+        int maxEndingHere = A[0], maxSoFar = A[0];
+            for (int i = 1; i < A.length; i++) {
+            maxEndingHere = Math.max(maxEndingHere + A[i], A[i]);
+            maxSoFar = Math.max(maxEndingHere, maxSoFar);
+            }
+        return maxSoFar;
+    }
+}
 /*
 Algo解釋
 =====中文=====
