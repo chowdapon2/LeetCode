@@ -10,4 +10,4 @@
 |[171. Excel Sheet Column Number](https://github.com/chowdapon2/LeetCode/blob/master/171.%20Excel%20Sheet%20Column%20Number.md)|Easy|
 |[173. Binary Search Tree Iterator](https://github.com/chowdapon2/LeetCode/blob/master/173.%20Binary%20Search%20Tree%20Iterator.md)|Medium|
 |[199. Binary Tree Right Side View](https://github.com/chowdapon2/LeetCode/blob/master/199.%20Binary%20Tree%20Right%20Side%20View.md)|Medium|
-      
+|[202. Happy Number](https://github.com/chowdapon2/LeetCode/blob/master/202.%20Happy%20Number.md#202-happy-number)|Easy|
