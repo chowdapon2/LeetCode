@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - InterView",
+            "request": "launch",
+            "mainClass": "InterView",
+            "projectName": "LeetCode_abda98e1"
+        }
+    ]
+}
